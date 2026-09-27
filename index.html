@@ -1,25 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="icon" type="image/x-icon" href="assets/soonniiic.jpg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital wave 2026</title>
+    <title>Digital Wave 2026 — Muhammad Azzam</title>
+    <link rel="icon" type="image/x-icon" href="assets/soonniiic.jpg">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1 class="tx-16" style="text-align: center; color: rgb(125, 18, 149);">
-        Hello Sobat goyim!
-    </h1>
-    <p class="tx-16" style="color:coral;">
-    bio data                   <br>
-    Nama: Muhammad Azzam       <br>
-    Prodi: Teknologi Informasi <br>
-    Kelas: 2A                  <br>
-    </p>
-    <video width="400" height="300" controls autoplay loop style="display: block; margin: 0 auto;">
-        <source src="assets/badapple.webm" type="video/webm">
-        Your browser does not support the video element.
-    </video>
+    <!-- soft light blooms -->
+    <div class="bloom bloom-1"></div>
+    <div class="bloom bloom-2"></div>
+    <div class="bloom bloom-3"></div>
+
+    <!-- rising bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <!-- top bar -->
+    <header class="topbar">
+        <div class="logo">Digital Wave 2026</div>
+        <nav class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#main">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home">
+        <div class="aero-panel hero-panel">
+            <h1>Hello Sobat goyim!</h1>
+            <p class="tagline">Digital Wave 2026 · Teknologi Informasi</p>
+            <a href="#main" class="aero-btn">Kenalan dulu →</a>
+        </div>
+    </section>
+
+    <!-- MAIN: Video left + Bio right -->
+    <section id="main">
+        <div class="content-wrap">
+            <!-- LEFT: Video -->
+            <div class="video-side">
+                <h2>My shitpost that i stole</h2>
+                <div class="video-frame">
+                    <video controls autoplay loop muted playsinline>
+                        <source src="assets/badapple.webm" type="video/webm">
+                        no video?
+                    </video>
+                </div>
+            </div>
+
+            <!-- RIGHT: Bio -->
+            <div class="bio-side">
+                <div class="aero-panel bio-panel">
+                    <h2>Bio Data</h2>
+                    <p>
+                        Nama: Muhammad Azzam<br>
+                        Prodi: Teknologi Informasi<br>
+                        Class: ???
+                    </p>
+                </div>
+
+                <div class="aero-panel bio-panel">
+                    <h2>About</h2>
+                    <p style="color: var(--text); font-weight: 400; opacity: 0.9;">
+                        A retarded colege student that who love retarded things (furry and hard R included).
+                    </p>
+                    <div class="info-rows">
+                        <div><span>Status</span> <strong>Mahasiswa</strong></div>
+                        <div><span>Fokus</span> <strong>IT</strong></div>
+                        <div><span>IQ</span> <strong>Retarded</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="aero-panel contact-panel">
+            <h2>Contact</h2>
+            <p>colab? Hit me up.</p>
+            <a href="mailto:azzam@example.com" class="aero-btn">Email Me</a>
+        </div>
+    </section>
+
+    <footer>
+        Digital Wave 2026 · Muhammad Azzam · Kelas 2A<br>
+        <span style="font-size: 0.82rem;">Frutiger Aero energy :3</span>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                const top = sec.offsetTop - 100;
+                if (scrollY >= top) current = sec.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
